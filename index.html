@@ -10,8 +10,51 @@
     <title>Weather Report</title>
 </head>
 <body>
-    <header></header>
-    <div></div>
+    <header>
+        <h1>Weather Dashboard</h1>
+    </header>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4">
+                <label>Search for a City</label>
+                <input type="text" id="searchCity" placeholder="Enter a City"/>
+                <button class="btn-primary" type="button" id="searchBtn">Search</button>
+                <hr />
+                <h5>Search History</h5>
+                <ul id="searchHstry"></ul>
+                <button class="btn btn-primary" type="button" id="clearHistory">Clear</button>
+                <form id="history"></form>
+            </div>
+            <div class="col-lg-9">
+                <div class="row mr-0">
+                    <div class="col=lg-11 card m-3 d-none" id="todayForecast">
+                        <div class="card-body">
+                            <h3 id="cityName" class="cityName align-middle"></h3>
+                            <img id="thisPic" alt="">
+                            <p id="temperature"></p>
+                            <p id="humidity"></p>
+                            <p id="wind-speed"></p>
+                            <p id="UV-index"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row d-none" id="fiveDay">
+                    <div class="col-12">
+                        <h3>Five Day Forecast</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2 forecast bg-primary text-white m-2 rounded"></div>
+                    <div class="col-md-2 forecast bg-primary text-white m-2 rounded"></div>
+                    <div class="col-md-2 forecast bg-primary text-white m-2 rounded"></div>
+                    <div class="col-md-2 forecast bg-primary text-white m-2 rounded"></div>
+                    <div class="col-md-2 forecast bg-primary text-white m-2 rounded"></div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
     <script src="./Develop/script.js"></script>
 </body>
 </html>
