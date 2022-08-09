@@ -1,61 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
-    <title>Weather Report</title>
+    <link rel="stylesheet" href="./Develop/style.css" />
+    <title>Weather Dashboard</title>
 </head>
 <body>
-    <header>
-        <h1>Weather Dashboard</h1>
+    <header class="hero">
+        <h1 class="app-title">Weather Dashboard</h1>
     </header>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-4">
-                <label>Search for a City</label>
-                <input type="text" id="searchCity" placeholder="Enter a City"/>
-                <button class="btn-primary" type="button" id="searchBtn">Search</button>
-                <hr />
-                <h5>Search History</h5>
-                <ul id="searchHstry"></ul>
-                <button class="btn btn-primary" type="button" id="clearHistory">Clear</button>
-                <form id="history"></form>
-            </div>
-            <div class="col-lg-9">
-                <div class="row mr-0">
-                    <div class="col=lg-11 card m-3 d-none" id="todayForecast">
-                        <div class="card-body">
-                            <h3 id="cityName" class="cityName align-middle"></h3>
-                            <img id="thisPic" alt="">
-                            <p id="temperature"></p>
-                            <p id="humidity"></p>
-                            <p id="wind-speed"></p>
-                            <p id="UV-index"></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row d-none" id="fiveDay">
-                    <div class="col-12">
-                        <h3>Five Day Forecast</h3>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-2 forecast bg-primary text-white m-2 rounded"></div>
-                    <div class="col-md-2 forecast bg-primary text-white m-2 rounded"></div>
-                    <div class="col-md-2 forecast bg-primary text-white m-2 rounded"></div>
-                    <div class="col-md-2 forecast bg-primary text-white m-2 rounded"></div>
-                    <div class="col-md-2 forecast bg-primary text-white m-2 rounded"></div>
-                </div>
-            </div>
-
-        </div>
-
+    <main class="flex-row justify-space-between">
+    <div class="col-12 col-md-3">
+        <form id="city-form" class="card-body">
+            <label class="form-label" for="cityname"><h2>Search for a City:</h2></label>
+            <input name="cityname" id="cityname" type="text" autofocus="true" class="form-input" />
+            <button type="submit" class="btn search">Search</button>
+        </form>
+        <div class="line"></div>
+        <div id="recentCities" class="list-group"></div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    <div class="col-12 col-md-9">
+        <div id = "box1" class="hide">
+        <h2 class="subtitle"><span id="city-search-term"></span></h2>
+        <div id="currentWeather-container" class="list-group"></div>
+        </div>
+        <div class = "col-9">
+            <div class = "row"> 
+                <h2 id = "fiveDayForecast" class ="hide">5-Day Forecast:</h2>
+            </div>
+            <div class = "row allForecastData"></div>
+        </div>
+    </div>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./Develop/script.js"></script>
 </body>
+
 </html>
