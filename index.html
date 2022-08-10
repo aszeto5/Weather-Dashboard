@@ -1,42 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./Develop/style.css" />
-    <title>Weather Dashboard</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap link  -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="./Develop/style.css" />
+  <title>Weather Dashboard App</title>
 </head>
+
 <body>
-    <header class="hero">
-        <h1 class="app-title">Weather Dashboard</h1>
-    </header>
-    <main class="flex-row justify-space-between">
-    <div class="col-12 col-md-3">
-        <form id="city-form" class="card-body">
-            <label class="form-label" for="cityname"><h2>Search for a City:</h2></label>
-            <input name="cityname" id="cityname" type="text" autofocus="true" class="form-input" />
-            <button type="submit" class="btn search">Search</button>
-        </form>
-        <div class="line"></div>
-        <div id="recentCities" class="list-group"></div>
-    </div>
-    <div class="col-12 col-md-9">
-        <div id = "box1" class="hide">
-        <h2 class="subtitle"><span id="city-search-term"></span></h2>
-        <div id="currentWeather-container" class="list-group"></div>
+  <h1>Weather Dashboard</h1>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-4">
+        <label>Search for a city:</label>
+        <input type="text" id="search-city" />
+        <button class="bg-primary" id="search-btn">Search</button>
+        <hr />
+        <h5>SAVED CITIES FROM SEARCH </h5>
+        <ul id="saved-cities-list">
+
+
+        </ul>
+      </div>
+      <div class="col-8">
+        <div class="container">
+          <h2 id="city-title">City, State </h2><img id="wicon" alt="Weather icon" />
+          <p>Temperature: <span id="currentTemp">0</span></p>
+          <p>Humidity: <span id="currentHum">0</span></p>
+          <p>Wind: <span id="currentWind">0</span></p>
+          <p>UV Index: <span id="currentUV">0</span></p>
         </div>
-        <div class = "col-9">
-            <div class = "row"> 
-                <h2 id = "fiveDayForecast" class ="hide">5-Day Forecast:</h2>
+        <div class="container">
+          <h2>5 Day Forecast</h2>
+          <div class="card-group">
+            <div class="card m-1" id="card-One">
+              <h5 class="card-title " id="card-title-one">date</h5>
+              <img id="wicon-one" alt="Weather icon" />
+              <p class="card-text" id="card-one-temp">Temp</p>
+              <p class="card-text" id="card-one-wind">Wind</p>
+              <p class="card-text" id="card-one-hum">Humidity</p>
             </div>
-            <div class = "row allForecastData"></div>
+
+            <div class="card m-1" id="card-Two">
+              <h5 class="card-title " id="card-title-two">date</h5>
+              <img id="wicon-two" alt="Weather icon" />
+              <p class="card-text" id="card-two-temp">Temp</p>
+              <p class="card-text" id="card-two-wind">Wind</p>
+              <p class="card-text" id="card-two-hum">Humidity</p>
+            </div>
+
+            <div class="card m-1" id="card-Three">
+              <h5 class="card-title " id="card-title-three">date</h5>
+              <img id="wicon-three" alt="Weather icon" />
+              <p class="card-text" id="card-three-temp">Temp</p>
+              <p class="card-text" id="card-three-wind">Wind</p>
+              <p class="card-text" id="card-three-hum">Humidity</p>
+            </div>
+
+            <div class="card m-1" id="card-Four">
+              <h5 class="card-title " id="card-title-four">date</h5>
+              <img id="wicon-four" alt="Weather icon" />
+              <p class="card-text" id="card-four-temp">Temp</p>
+              <p class="card-text" id="card-four-wind">Wind</p>
+              <p class="card-text" id="card-four-hum">Humidity</p>
+            </div>
+
+            <div class="card m-1" id="card-Five">
+              <h5 class="card-title " id="card-title-five">date</h5>
+              <img id="wicon-five" alt="Weather icon" />
+              <p class="card-text" id="card-five-temp">Temp</p>
+              <p class="card-text" id="card-five-wind">Wind</p>
+              <p class="card-text" id="card-five-hum">Humidity</p>
+            </div>
+
+          </div>
         </div>
+      </div>
     </div>
-    </main>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="./Develop/script.js"></script>
+  </div>
+
+
+
+
+
+
+
+
+
+
+  <!-- Bootstrap  JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
+  <!-- Custom JS script file -->
+  <script src="./Develop/script.js"></script>
 </body>
 
 </html>
